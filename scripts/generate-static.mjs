@@ -19,8 +19,8 @@ for (const file of files) {
 }
 
 // Build the HTML
-const cssLinks = cssFiles.map(f => `    <link rel="stylesheet" href="./${f}" />`).join("\n");
-const jsModules = jsFiles.map(f => `    <script type="module" src="./${f}"></script>`).join("\n");
+const cssLinks = cssFiles.map(f => `    <link rel="stylesheet" href="/HappyBirthdayKeerthana/${f}" />`).join("\n");
+const jsModules = jsFiles.map(f => `    <script type="module" src="/HappyBirthdayKeerthana/${f}"></script>`).join("\n");
 
 const html = `<!DOCTYPE html>
 <html lang="en">
