@@ -25,8 +25,8 @@ const jsFiles = files.filter(f => f.endsWith(".js")).map(f => `assets/${f}`);
 // In TanStack Start, there's often an index-*.js that is the entry.
 const entryJs = jsFiles.find(f => f.includes("index")) || jsFiles[0];
 
-const cssLinks = cssFiles.map(f => `    <link rel="stylesheet" href="/HappyBirthdayKeerthana/${f}" />`).join("\n");
-const jsModules = jsFiles.map(f => `    <script type="module" src="/HappyBirthdayKeerthana/${f}"></script>`).join("\n");
+const cssLinks = cssFiles.map(f => `    <link rel="stylesheet" href="/${f}" />`).join("\n");
+const jsModules = jsFiles.map(f => `    <script type="module" src="/${f}"></script>`).join("\n");
 
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,6 @@ const html = `<!DOCTYPE html>
     <meta property="og:title" content="Happy 21st Birthday Keerthana Shree ❤️" />
     <meta property="og:description" content="A cinematic birthday surprise made with love ❤️" />
     <meta name="theme-color" content="#1a0a2e" />
-    <base href="/HappyBirthdayKeerthana/" />
 ${cssLinks}
     <style>
       body { margin: 0; background: #0a0015; color: white; font-family: sans-serif; }
