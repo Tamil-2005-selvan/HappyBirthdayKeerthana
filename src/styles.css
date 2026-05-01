@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-neon-pink: var(--neon-pink);
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-rose: var(--neon-rose);
+  --color-glass: var(--glass);
+  --color-glass-border: var(--glass-border);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.08 0.02 300);
+  --foreground: oklch(0.95 0.02 320);
+  --card: oklch(0.12 0.03 300);
+  --card-foreground: oklch(0.95 0.02 320);
+  --popover: oklch(0.12 0.03 300);
+  --popover-foreground: oklch(0.95 0.02 320);
+  --primary: oklch(0.72 0.25 330);
+  --primary-foreground: oklch(0.98 0.01 320);
+  --secondary: oklch(0.35 0.15 290);
+  --secondary-foreground: oklch(0.95 0.02 320);
+  --muted: oklch(0.18 0.04 290);
+  --muted-foreground: oklch(0.65 0.08 320);
+  --accent: oklch(0.55 0.2 290);
+  --accent-foreground: oklch(0.98 0.01 320);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.25 0.06 300 / 40%);
+  --input: oklch(0.2 0.05 300 / 50%);
+  --ring: oklch(0.72 0.25 330);
+  --chart-1: oklch(0.72 0.25 330);
+  --chart-2: oklch(0.55 0.2 290);
+  --chart-3: oklch(0.65 0.15 350);
+  --chart-4: oklch(0.8 0.18 30);
+  --chart-5: oklch(0.6 0.22 310);
+  --sidebar: oklch(0.1 0.03 300);
+  --sidebar-foreground: oklch(0.95 0.02 320);
+  --sidebar-primary: oklch(0.72 0.25 330);
+  --sidebar-primary-foreground: oklch(0.98 0.01 320);
+  --sidebar-accent: oklch(0.2 0.06 290);
+  --sidebar-accent-foreground: oklch(0.95 0.02 320);
+  --sidebar-border: oklch(0.25 0.06 300 / 40%);
+  --sidebar-ring: oklch(0.72 0.25 330);
+
+  /* Custom romantic tokens */
+  --neon-pink: oklch(0.72 0.25 330);
+  --neon-purple: oklch(0.55 0.2 290);
+  --neon-rose: oklch(0.65 0.22 350);
+  --glass: oklch(0.15 0.04 300 / 30%);
+  --glass-border: oklch(0.5 0.1 320 / 20%);
+  --gradient-romantic: linear-gradient(135deg, oklch(0.08 0.02 300), oklch(0.12 0.06 290), oklch(0.08 0.04 330));
+  --gradient-neon: linear-gradient(135deg, oklch(0.72 0.25 330), oklch(0.55 0.2 290));
+  --glow-pink: 0 0 20px oklch(0.72 0.25 330 / 50%), 0 0 60px oklch(0.72 0.25 330 / 20%);
+  --glow-purple: 0 0 20px oklch(0.55 0.2 290 / 50%), 0 0 60px oklch(0.55 0.2 290 / 20%);
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Quicksand', sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+}
+
+
+/* Glassmorphism utility */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+}
+
+.glass-strong {
+  background: oklch(0.12 0.04 300 / 60%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid oklch(0.5 0.1 320 / 30%);
+  border-radius: var(--radius-xl);
+}
+
+/* Neon glow text */
+.neon-text {
+  text-shadow: 0 0 10px oklch(0.72 0.25 330 / 60%), 0 0 40px oklch(0.72 0.25 330 / 30%), 0 0 80px oklch(0.72 0.25 330 / 15%);
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 10px oklch(0.55 0.2 290 / 60%), 0 0 40px oklch(0.55 0.2 290 / 30%);
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+  60% { transform: scale(1); }
+}
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px oklch(0.72 0.25 330 / 40%); }
+  50% { box-shadow: 0 0 40px oklch(0.72 0.25 330 / 70%), 0 0 80px oklch(0.55 0.2 290 / 30%); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Star twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(-3px, -3px); }
+  60% { transform: translate(3px, 3px); }
+  80% { transform: translate(3px, -3px); }
+  100% { transform: translate(0); }
+}
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+/* Candle flame */
+@keyframes flame {
+  0%, 100% { transform: scaleY(1) rotate(-1deg); }
+  25% { transform: scaleY(1.1) rotate(1deg); }
+  50% { transform: scaleY(0.95) rotate(-1deg); }
+  75% { transform: scaleY(1.05) rotate(2deg); }
+}
+
+/* Handwriting effect */
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Screen flicker */
+@keyframes flicker {
+  0% { opacity: 1; }
+  3% { opacity: 0.4; }
+  6% { opacity: 1; }
+  7% { opacity: 0.4; }
+  8% { opacity: 1; }
+  9% { opacity: 0.4; }
+  10% { opacity: 1; }
+  89% { opacity: 1; }
+  90% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Romantic screen */
+.romantic-screen {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1rem;
+}
+
+/* Floating hearts */
+@keyframes floatHeart {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-20vh) rotate(45deg); opacity: 0; }
+}
+
+/* Stars background */
+.stars-bg {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, oklch(0.9 0.05 320), transparent),
+    radial-gradient(2px 2px at 40px 70px, oklch(0.85 0.08 290), transparent),
+    radial-gradient(1px 1px at 90px 40px, oklch(0.95 0.02 0), transparent),
+    radial-gradient(1px 1px at 130px 80px, oklch(0.9 0.05 330), transparent),
+    radial-gradient(2px 2px at 160px 30px, oklch(0.85 0.06 280), transparent);
+  background-size: 200px 100px;
+}
+
+/* Font classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-handwriting {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* 3D perspective for card flips */
+.perspective-500 {
+  perspective: 600px;
+}
+
+/* Neon border glow */
+.neon-border {
+  border: 1px solid oklch(0.72 0.25 330 / 40%);
+  box-shadow: 0 0 10px oklch(0.72 0.25 330 / 20%), inset 0 0 10px oklch(0.72 0.25 330 / 10%);
+}
+
+/* Smooth scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.72 0.25 330 / 30%) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.72 0.25 330 / 30%);
+  border-radius: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: oklch(0.72 0.25 330 / 30%);
+  color: oklch(0.98 0.01 0);
+}
+
+/* Improved bloom glow effect */
+@keyframes bloom {
+  0%, 100% { filter: brightness(1) blur(0px); }
+  50% { filter: brightness(1.2) blur(1px); }
+}
+
+.animate-bloom {
+  animation: bloom 3s ease-in-out infinite;
+}
+
+/* Shooting star */
+@keyframes shoot {
+  0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 1; }
+  100% { transform: translateX(200px) translateY(200px) rotate(45deg); opacity: 0; }
+}
+
+/* Rose petal fall */
+@keyframes petalFall {
+  0% { transform: translateY(-5vh) rotate(0deg) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(105vh) rotate(720deg) translateX(40px); opacity: 0; }
+}
+
